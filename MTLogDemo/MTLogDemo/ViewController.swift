@@ -10,11 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, MTLog {
 
+    var category: String = "view"
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Add screen tracking
-        self.logScreen("root view")
+        logScreen("root view")
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -27,10 +28,13 @@ class ViewController: UIViewController, MTLog {
     @IBAction func testButtonAction(sender: AnyObject) {
         
         //print debug information
-        self.debugPrint("Button trigered")
+        debugPrint("Button trigered")
         
         //Add tracking event
-        self.logEvent("Button", action: "test button trigered")
+        logEvent("Button", action: "test button trigered")
+
+        //show error message
+        errorHandle("error")
     }
 
 }
